@@ -30,7 +30,7 @@
     viewer.scene.globe.depthTestAgainstTerrain = true;
 
     // 1) Capa del barrio: SOLO para ubicar/recortar (sin extrusión)
-    const barrio = await Cesium.GeoJsonDataSource.load("Villa_Anny_II.geojson", {
+    const barrio = await Cesium.GeoJsonDataSource.load("El_Vergel.geojson", {
       clampToGround: true
     });
     viewer.dataSources.add(barrio);
@@ -44,7 +44,7 @@
 
     // 2) PREDIOS: extrusión (usa 'altura' o 'pisos'; fallback 6 m)
     // Exporta desde QGIS como EPSG:4326
-    const predios = await Cesium.GeoJsonDataSource.load("Villa_Anny_II.geojson", {
+    const predios = await Cesium.GeoJsonDataSource.load("El_Vergel.geojson", {
       // importante: SIN clampToGround si vas a extruir
     });
     viewer.dataSources.add(predios);
